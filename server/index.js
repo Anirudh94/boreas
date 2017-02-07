@@ -4,7 +4,7 @@ var http = require('http'),
 
 var app = express();
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 9000;
 
 try {
   var ip = fs.readFileSync('SERVER_IP', 'utf8').trim();
@@ -16,10 +16,9 @@ try {
 app.use(express.static(__dirname + '/public'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.get('/:coll/latest', (req, res) => {
-  console.log('requested~');
   var options = {
     hostname: '127.0.0.1',
-    port: '8080',
+    port: '8090',
     path: '/' + req.params.coll + '/latest',
     method: 'GET'
   }
