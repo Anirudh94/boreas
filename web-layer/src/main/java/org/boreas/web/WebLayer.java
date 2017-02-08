@@ -56,7 +56,7 @@ public class WebLayer {
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
 
-        server = new Server(8080);
+        server = new Server(8090);
 
         httpConnector = new ServerConnector(server);
         httpConnector.setHost(host);
