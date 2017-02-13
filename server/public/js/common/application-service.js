@@ -22,11 +22,11 @@ export default class ApplicationService {
     }
 
     showDialog(msg) {
-        window.alert(createPrefixedString(msg));
+        window.alert(this.createPrefixedString(msg));
     }
 
     log(msg) {
-        console.log(createPrefixedString(msg));
+        console.log(this.createPrefixedString(msg));
     }
 
     createPrefixedString(str) {
