@@ -54,7 +54,6 @@ export default class VmCpuUsageModel extends BasicModel {
             );
         }
         if (items.length > 1) {
-            console.log(items);
             this.data.push(items);    
             onSuccess(this.keys, this.data);
             this.trim();
