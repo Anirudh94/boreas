@@ -1,25 +1,19 @@
 'use strict';
 
 import ApplicationService from './common/application-service.js';
-import CpuUsageModule from './cpu-usage/cpu-usage-module.js';
-import MemoryUsageModule from './memory-usage/memory-usage-module.js';
+
+import VmCpuUsageModule from './vm-cpu-usage/vm-cpu-usage-module.js';
 
 const modules = [];
 const bindPoints = [];
 
 const rootAppSvc = new ApplicationService("ThermostatWeb", document.body);
 
-const cpuUsageDiv = rootAppSvc.createElement('div', 'cpuUsageDiv');
-bindPoints.push(cpuUsageDiv);
+const vmCpuUsageDiv = rootAppSvc.createElement('div', 'vmCpuUsageDiv');
+bindPoints.push(vmCpuUsageDiv);
 
-const cpuUsageModule = new CpuUsageModule(new ApplicationService('CpuUsage', cpuUsageDiv));
-modules.push(cpuUsageModule);
-
-const memoryUsageDiv = rootAppSvc.createElement('div', 'memoryUsageDiv');
-bindPoints.push(memoryUsageDiv);
-
-const memoryUsageModule = new MemoryUsageModule(new ApplicationService('MemoryUsage', memoryUsageDiv));
-modules.push(memoryUsageModule);
+const vmCpuUsageModule = new VmCpuUsageModule(new ApplicationService('VmCpuUsage', vmCpuUsageDiv));
+modules.push(vmCpuUsageModule);
 
 window.addEventListener('load', () => {
     bindPoints.forEach(bindPoint => {
