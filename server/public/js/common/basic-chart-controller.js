@@ -15,7 +15,7 @@ export default class BasicChartController {
                     (d, i) => { this.enabled = true; }
                 );
             },
-            () => { this.view.showDialog('Key initialization failed'); this.reset(); }
+            () => { this.view.log('Key initialization failed'); this.reset(); }
         );
     }
 
@@ -49,7 +49,7 @@ export default class BasicChartController {
                 }
                 this.view.setData([keys].concat(data));
             },
-            () => { this.view.showDialog('Update failed'); this.stop(); }
+            () => { this.view.log('Update failed'); this.stop(); }
         );
     }
 

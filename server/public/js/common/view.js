@@ -10,6 +10,10 @@ export default class View {
         this.appSvc.showDialog(msg);
     }
 
+    log(msg) {
+        this.appSvc.log(msg);
+    }
+
     destroy() {}
 
     setPlaceholder() {}

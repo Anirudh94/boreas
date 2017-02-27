@@ -66,7 +66,6 @@ export default class VmCpuUsageModel extends BasicModel {
             const now = Date.now();
             const oldest = this.data[0];
             const age = (now - oldest[0]) / 1000;
-            
             if (this.maxAge > 0 && age > this.maxAge) {
                 this.data.shift();
             } else {

@@ -30,7 +30,7 @@ export default class VmCpuUsageModule extends Module {
             this.vmCpuStatsController = new BasicChartController(this.appSvc, new VmCpuUsageModel(this.appSvc), new TimeSeriesLineView(this.appSvc, chartDiv));
 
             this.vmCpuStatsController.setUpdatePeriod.call(this.vmCpuStatsController, 1000 * 1);
-            this.vmCpuStatsController.setMaxAge.call(this.vmCpuStatsController, 60 * 10);
+            this.vmCpuStatsController.setMaxAge.call(this.vmCpuStatsController, 30 * 1);
         };
     }
 
